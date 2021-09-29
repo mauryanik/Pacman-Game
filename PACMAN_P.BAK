@@ -1,43 +1,24 @@
-#include<graphics.h>
-#include<stdlib.h>
-#include<ctype.h>
-#include<dos.h>
-#include<time.h>
-#include<stdio.h>
-#include<conio.h>
-#define RIGHT 0
+#include<graphics.h> #include<stdlib.h> #include<ctype.h> #include<dos.h> #include<time.h> #include<stdio.h> #include<conio.h> #define RIGHT 0
 #define LEFT 1
 
 #define UP 2
 #define DOWN 3
 
-//this is the latest
-void initialise(void);
-char endscreen(void);
-void startscreen(void);
-void music(int);
-void vline(unsigned char ,int,int,int,int);
-void hline(unsigned char,int,int,int,int);
-void drawbox (int,int,int,int,char);
+//this is the latest void initialise(void); char endscreen(void); void startscreen(void); void music(int);
+void vline(unsigned char ,int,int,int,int); void hline(unsigned char,int,int,int,int); void drawbox (int,int,int,int,char);
 void gamescreen(void); void size (int,int);
-void writechar(char,int,int,int);
-void monitor(void);
-void getkeyhit(void);
-int testkeys(void);
-void readchar(int,int,unsigned char*);
-void bug(int*,int *,int *,unsigned char *);
+void writechar(char,int,int,int); void monitor(void);
+void getkeyhit(void); int testkeys(void);
+void readchar(int,int,unsigned char*); void bug(int
+*,int *,int *,unsigned char *);
 
-void movebugright(int *,int *,unsigned char *);
-void movebugleft(int *,int *,unsigned char *);
-
-void movebugup(int *,int *,unsigned char *);
-void movebugdown(int *,int *,unsigned char *); void killeater(void);
+void movebugright(int *,int *,unsigned char *); void movebugleft(int *,int *,unsigned char *);
+ 
+void movebugup(int *,int *,unsigned char *); void movebugdown(int *,int *,unsigned char *); void killeater(void);
 
 
-int maze[25][80],score,row,col,ascii,scan,liveslost,delayfactor;
-int gd=DETECT,gm,midx,midy,maxx,maxy;
-int bugnumber , r[5],c[5],dir[5];
- unsigned char charbelow[5];
+int maze[25][80],score,row,col,ascii,scan,liveslost,delayfactor; int gd=DETECT,gm,midx,midy,maxx,maxy;
+int bugnumber , r[5],c[5],dir[5]; unsigned char charbelow[5];
 char far *vid_mem= (char far *) 0xB8000000L ;
 
 
@@ -47,11 +28,8 @@ void main(void)
 
 {
 
-char ans ;
-clrscr();
-/* intialize randonm number generator wih a random value */
-randomize ();
-startscreen();
+char ans ; clrscr();
+/* intialize randonm number generator wih a random value */ randomize (); startscreen();
 
 
 
@@ -158,8 +136,7 @@ settextstyle (DEFAULT_FONT,HORIZ_DIR,3); outtextxy(midx,400,"We wish you Best of
 /*Flush the keyboard buffer*/ if (getch()==0)
 getch();
 
-/*Draw the screen for asking user level*/ setviewport (0,0,maxx,maxy,1);
-clearviewport();
+/*Draw the screen for asking user level*/ setviewport (0,0,maxx,maxy,1); cleaviewport();
 rectangle(midx-200,midy-60,midx+200,midy+60);
 
 
